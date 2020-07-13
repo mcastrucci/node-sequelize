@@ -1,7 +1,20 @@
-Define environment variables in a .env file:
+Define environment variables in a .env file targeting the database instance:
 
 DB_USER=
 DB_HOST=
 DB_NAME=
 DB_PASSWORD=
 DB_PORT=
+
+this sample project has a postgres data base with the following table:
+
+test=> \d users
+                                      Tabla ½public.users╗
+ Columna  |          Tipo          | Ordenamiento | Nulable  |            Por omisi¾n
+----------+------------------------+--------------+----------+-----------------------------------
+ id       | integer                |              | not null | nextval('users_id_seq'::regclass)
+ email    | character varying(255) |              | not null |
+ password | character varying(255) |              | not null |
+═ndices:
+    "users_pkey" PRIMARY KEY, btree (id)
+    "users_email_key" UNIQUE CONSTRAINT, btree (email)
